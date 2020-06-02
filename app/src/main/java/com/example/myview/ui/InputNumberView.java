@@ -22,6 +22,7 @@ public class InputNumberView extends RelativeLayout {
     private TextView mPlusTv;
     private View inflate;
 
+
     public InputNumberView(Context context) {
         this(context, null);
     }
@@ -40,7 +41,6 @@ public class InputNumberView extends RelativeLayout {
     }
 
 
-
     private void initView(Context context) {
         //前面的修改都会导致都执行这个方法
         //以下三种代码等价
@@ -54,7 +54,9 @@ public class InputNumberView extends RelativeLayout {
 //        View view = LayoutInflater.from(context).inflate(R.layout.input_number_view, this, false);
 //        addView(view);
     }
+
     private void setUpEvent() {
+        //3.首先在它的控件上设置监听，里面有方法
         mMinusTv.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,21 +67,42 @@ public class InputNumberView extends RelativeLayout {
         mPlusTv.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                mCurrentNumber++;
+                mCurrentNumber++;//先加，后再更新
                 updateText();
             }
         });
     }
+
     public int getCurrentNumber() {
         return mCurrentNumber;
     }
 
     public void setCurrentNumber(int value) {
         this.mCurrentNumber = value;
-        this.updateText();
+        this.updateText();//想要this吗
     }
 
     private void updateText() {
         mValueEdt.setText(String.valueOf(mCurrentNumber));
+        //3.
+        if (mOnNumberChangeListener != null) {
+            mOnNumberChangeListener.onNumberChange(this.mCurrentNumber);
+        }
+
     }
+
+    /**
+     * 监听
+     */
+    private OnNumberChangeListener mOnNumberChangeListener;
+    //公共方法
+    public void setOnNumberChangeListener(OnNumberChangeListener listener) {
+        this.mOnNumberChangeListener = listener;//2.将方法转为成员变量
+    }
+    //1.接口
+    public interface OnNumberChangeListener {//类里面的接口
+
+        void onNumberChange(int value);
+    }
+
 }
