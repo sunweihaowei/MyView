@@ -1,7 +1,9 @@
 package com.example.myview.ui;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
@@ -16,11 +18,19 @@ import com.example.myview.R;
  * @date :2020/6/1 7:06
  */
 public class InputNumberView extends RelativeLayout {
+    private static final String TAG = "InputNumberView";
     private int mCurrentNumber = 0;//这里是默认为0
     private TextView mMinusTv;
     private EditText mValueEdt;
     private TextView mPlusTv;
     private View inflate;
+    private int max;
+    private int min;
+    private int step;
+    private boolean disable;
+    private int resourceId;
+    private float dimension;
+    private TypedArray typedArray;
 
 
     public InputNumberView(Context context) {
@@ -33,11 +43,33 @@ public class InputNumberView extends RelativeLayout {
 
     public InputNumberView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        initAttrs(context, attrs);
         initView(context);
         //设置事件
         setUpEvent();
         //
 
+    }
+
+    private void initAttrs(Context context, AttributeSet attrs) {
+        //设置属性
+        typedArray = context.obtainStyledAttributes(attrs, R.styleable.InputNumberView);
+        //默认值为0
+        max = typedArray.getInt(R.styleable.InputNumberView_max, 0);
+        min = typedArray.getInt(R.styleable.InputNumberView_min, 0);
+        step = typedArray.getInt(R.styleable.InputNumberView_step, 0);
+        disable = typedArray.getBoolean(R.styleable.InputNumberView_disable, false);
+        resourceId = typedArray.getResourceId(R.styleable.InputNumberView_btnColor, -1);
+        dimension = typedArray.getDimension(R.styleable.InputNumberView_default_size, 0);
+        Log.d(TAG, "initAttrs: "
+        +"\n"+max
+        +"\n"+min
+        +"\n"+step
+        +"\n"+disable
+        +"\n"+resourceId
+        +"\n"+dimension
+        );
+        typedArray.recycle();
     }
 
 
