@@ -5,7 +5,7 @@ import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.myview.ui.InputNumberView;
+import com.example.myview.ui.view.InputNumberView;
 //后台保活
 public class MainActivity extends AppCompatActivity implements InputNumberView.OnNumberChangeListener {
 
@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements InputNumberView.O
         setContentView(R.layout.activity_main);
         initView();
         myView_inv.setOnNumberChangeListener(this);
-
+        InputNumberView inputNumberView=new InputNumberView(this);
     }
 
     private void initView() {

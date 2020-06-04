@@ -25,7 +25,7 @@ public class MyTextView extends View {
     public MyTextView(Context context) {
         super(context,null);//这样修改会调用第二个
     }
-    //<Text/>的时候调用
+    //xml的创建这个View的时候调用
     public MyTextView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs,0);//这样修改会调用第三个
     }

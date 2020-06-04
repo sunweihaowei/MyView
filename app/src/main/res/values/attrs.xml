@@ -7,6 +7,7 @@
         <attr name="step" format="integer"/>
         <attr name="disable" format="boolean"/>
         <attr name="btnColor" format="reference"/>
+        <attr name="default_value" format="integer"/>
         <attr name="default_size" format="dimension"/>
     </declare-styleable>
 </resources>

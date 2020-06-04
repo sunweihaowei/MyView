@@ -1,4 +1,4 @@
-package com.example.myview.ui;
+package com.example.myview.ui.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -31,18 +31,22 @@ public class InputNumberView extends RelativeLayout {
     private int resourceId;
     private float dimension;
     private TypedArray typedArray;
+    private int defaultValue;
 
 
     public InputNumberView(Context context) {
         this(context, null);
+        Log.d(TAG, "InputNumberView1: 我是1");
     }
 
     public InputNumberView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
+        Log.d(TAG, "InputNumberView1: 我是2");
     }
 
     public InputNumberView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        Log.d(TAG, "InputNumberView1: 我是3");
         initAttrs(context, attrs);
         initView(context);
         //设置事件
@@ -51,13 +55,81 @@ public class InputNumberView extends RelativeLayout {
 
     }
 
+    public int getmCurrentNumber() {
+        return mCurrentNumber;
+    }
+
+    public void setmCurrentNumber(int mCurrentNumber) {
+        this.mCurrentNumber = mCurrentNumber;
+    }
+
+    public int getMax() {
+        return max;
+    }
+
+    public void setMax(int max) {
+        this.max = max;
+    }
+
+    public int getMin() {
+        return min;
+    }
+
+    public void setMin(int min) {
+        this.min = min;
+    }
+
+    public int getStep() {
+        return step;
+    }
+
+    public void setStep(int step) {
+        this.step = step;
+    }
+
+    public boolean isDisable() {
+        return disable;
+    }
+
+    public void setDisable(boolean disable) {
+        this.disable = disable;
+    }
+
+    public int getResourceId() {
+        return resourceId;
+    }
+
+    public void setResourceId(int resourceId) {
+        this.resourceId = resourceId;
+    }
+
+    public float getDimension() {
+        return dimension;
+    }
+
+    public void setDimension(float dimension) {
+        this.dimension = dimension;
+    }
+
+    public int getDefaultValue() {
+        return defaultValue;
+    }
+
+    public void setDefaultValue(int defaultValue) {
+        this.defaultValue = defaultValue;
+//        this.updateText();
+    }
+
     private void initAttrs(Context context, AttributeSet attrs) {
         //设置属性
         typedArray = context.obtainStyledAttributes(attrs, R.styleable.InputNumberView);
         //默认值为0
         max = typedArray.getInt(R.styleable.InputNumberView_max, 0);
         min = typedArray.getInt(R.styleable.InputNumberView_min, 0);
-        step = typedArray.getInt(R.styleable.InputNumberView_step, 0);
+        step = typedArray.getInt(R.styleable.InputNumberView_step, 1);
+        defaultValue = typedArray.getInt(R.styleable.InputNumberView_default_size, 0);
+        this.mCurrentNumber=defaultValue;
+//        updateText();
         disable = typedArray.getBoolean(R.styleable.InputNumberView_disable, false);
         resourceId = typedArray.getResourceId(R.styleable.InputNumberView_btnColor, -1);
         dimension = typedArray.getDimension(R.styleable.InputNumberView_default_size, 0);
@@ -92,14 +164,22 @@ public class InputNumberView extends RelativeLayout {
         mMinusTv.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                mCurrentNumber--;
+                mCurrentNumber-=step;
+                if (mCurrentNumber<=min){
+                    mCurrentNumber=min;
+                    Log.d(TAG, "onClick: "+mCurrentNumber);
+                }
                 updateText();
             }
         });
         mPlusTv.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                mCurrentNumber++;//先加，后再更新
+                mCurrentNumber+=step;//先加，后再更新
+                if (mCurrentNumber>=max){
+                    mCurrentNumber=max;
+                    Log.d(TAG, "onClick: "+mCurrentNumber);
+                }
                 updateText();
             }
         });

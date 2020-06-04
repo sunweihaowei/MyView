@@ -6,7 +6,7 @@
     xmlns:swh="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity"
     android:orientation="vertical">
-<com.example.myview.ui.InputNumberView
+<com.example.myview.ui.view.InputNumberView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/MyView_inv"
@@ -14,7 +14,7 @@
     swh:min="-30"
     swh:step="3"
     swh:disable="true"
-
+    swh:default_value="7"
     />
 
 
