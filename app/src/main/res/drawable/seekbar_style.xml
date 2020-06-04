@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/background"><!--这里是设置seek八日的那一部分-->
+        <shape>
+            <corners android:radius="10pt"/><!--设置圆角半径-->
+            <gradient
+                android:startColor="#ff808a87"
+                android:centerColor="#1A1918"
+                android:endColor="#ff808a87"
+                android:centerY="0.5"
+                android:angle="270"/>
+        </shape>
+    </item>
+    <item android:id="@+id/progress">
+        <clip>
+            <shape>
+                <corners android:radius="10pt"/>
+                <gradient
+                    android:startColor="#775227"
+                    android:centerColor="#F8C688"
+                    android:endColor="#FFCC8D"
+                    android:centerY="0.5"
+                    android:angle="270"/>
+            </shape>
+        </clip>
+    </item>
+</layer-list>
