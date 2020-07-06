@@ -16,14 +16,14 @@ public class MainActivity extends AppCompatActivity implements InputNumberView.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initView();
+        /*initView();
         myView_inv.setOnNumberChangeListener(this);
-        InputNumberView inputNumberView=new InputNumberView(this);
+        InputNumberView inputNumberView=new InputNumberView(this);*/
     }
 
-    private void initView() {
-        myView_inv = (InputNumberView) findViewById(R.id.MyView_inv);
-    }
+//    private void initView() {
+//        myView_inv = (InputNumberView) findViewById(R.id.MyView_inv);
+//    }
 
     @Override
     public void onNumberChange(int value) {

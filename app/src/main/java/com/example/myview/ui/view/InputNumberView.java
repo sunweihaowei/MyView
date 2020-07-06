@@ -128,18 +128,18 @@ public class InputNumberView extends RelativeLayout {
         min = typedArray.getInt(R.styleable.InputNumberView_min, 0);
         step = typedArray.getInt(R.styleable.InputNumberView_step, 1);
         defaultValue = typedArray.getInt(R.styleable.InputNumberView_default_size, 0);
-        this.mCurrentNumber=defaultValue;
+        this.mCurrentNumber = defaultValue;
 //        updateText();
         disable = typedArray.getBoolean(R.styleable.InputNumberView_disable, false);
         resourceId = typedArray.getResourceId(R.styleable.InputNumberView_btnColor, -1);
         dimension = typedArray.getDimension(R.styleable.InputNumberView_default_size, 0);
         Log.d(TAG, "initAttrs: "
-        +"\n"+max
-        +"\n"+min
-        +"\n"+step
-        +"\n"+disable
-        +"\n"+resourceId
-        +"\n"+dimension
+                + "\n" + max
+                + "\n" + min
+                + "\n" + step
+                + "\n" + disable
+                + "\n" + resourceId
+                + "\n" + dimension
         );
         typedArray.recycle();
     }
@@ -164,10 +164,12 @@ public class InputNumberView extends RelativeLayout {
         mMinusTv.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                mCurrentNumber-=step;
-                if (mCurrentNumber<=min){
-                    mCurrentNumber=min;
-                    Log.d(TAG, "onClick: "+mCurrentNumber);
+                mCurrentNumber -= step;
+                mPlusTv.setEnabled(true);
+                if (mCurrentNumber <= min) {
+                    v.setEnabled(false);
+                    mCurrentNumber = min;
+                    Log.d(TAG, "onClick: " + mCurrentNumber);
                 }
                 updateText();
             }
@@ -175,10 +177,12 @@ public class InputNumberView extends RelativeLayout {
         mPlusTv.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                mCurrentNumber+=step;//先加，后再更新
-                if (mCurrentNumber>=max){
-                    mCurrentNumber=max;
-                    Log.d(TAG, "onClick: "+mCurrentNumber);
+                mCurrentNumber += step;//先加，后再更新
+                mMinusTv.setEnabled(true);
+                if (mCurrentNumber >= max) {
+                    v.setEnabled(false);
+                    mCurrentNumber = max;
+                    Log.d(TAG, "onClick: " + mCurrentNumber);
                 }
                 updateText();
             }
@@ -207,10 +211,12 @@ public class InputNumberView extends RelativeLayout {
      * 监听
      */
     private OnNumberChangeListener mOnNumberChangeListener;
+
     //公共方法
     public void setOnNumberChangeListener(OnNumberChangeListener listener) {
         this.mOnNumberChangeListener = listener;//2.将方法转为成员变量
     }
+
     //1.接口
     public interface OnNumberChangeListener {//类里面的接口
 

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout style="@style/ll_NumKey">
+        <TextView
+            android:id="@+id/tv_one"
+            android:text="1"
+            style="@style/tv_numKey" />
+        <TextView
+            android:id="@+id/tv_2"
+            android:text="2"
+            style="@style/tv_numKey" />
+        <TextView
+            android:id="@+id/tv_3"
+            android:text="3"
+            style="@style/tv_numKey" />
+    </LinearLayout>
+    <LinearLayout style="@style/ll_NumKey">
+        <TextView
+            android:id="@+id/tv_4"
+            android:text="4"
+            style="@style/tv_numKey" />
+        <TextView
+            android:id="@+id/tv_5"
+            android:text="5"
+            style="@style/tv_numKey" />
+        <TextView
+            android:id="@+id/tv_6"
+            android:text="6"
+            style="@style/tv_numKey" />
+    </LinearLayout>
+    <LinearLayout style="@style/ll_NumKey">
+    <TextView
+        android:id="@+id/tv_7"
+        android:text="7"
+        style="@style/tv_numKey" />
+    <TextView
+        android:id="@+id/tv_8"
+        android:text="8"
+        style="@style/tv_numKey" />
+    <TextView
+        android:id="@+id/tv_9"
+        android:text="9"
+        style="@style/tv_numKey" />
+</LinearLayout>
+    <LinearLayout style="@style/ll_NumKey">
+        <TextView
+            android:id="@+id/tv_0"
+            android:text="0"
+            style="@style/tv_numKey" />
+        <TextView
+            android:layout_weight="2"
+            android:id="@+id/tv_delete"
+            android:text="删除"
+            style="@style/tv_numKey" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,2 +1,3 @@
+include ':basicknowledge'
 rootProject.name='MyView'
 include ':app'

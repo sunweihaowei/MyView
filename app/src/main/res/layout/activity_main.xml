@@ -6,7 +6,11 @@
     xmlns:swh="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity"
     android:orientation="vertical">
-<com.example.myview.ui.view.InputNumberView
+    <com.example.myview.ui.view.DrawTextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center" />
+<!--<com.example.myview.ui.view.InputNumberView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/MyView_inv"
@@ -15,7 +19,10 @@
     swh:step="3"
     swh:disable="true"
     swh:default_value="7"
-    />
+    />-->
+    <!--<com.example.myview.ui.view.LoginKeyboard
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>-->
 
 
 </LinearLayout>

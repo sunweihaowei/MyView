@@ -1,0 +1,129 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".GameView.GameActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        >
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            >
+            <TextView
+                android:id="@+id/tv_30"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/bg_notifaction"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            >
+            <TextView
+                android:id="@+id/tv_25"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/bg_notifaction"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            >
+            <TextView
+                android:id="@+id/tv_20"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/bg_notifaction"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            >
+            <TextView
+                android:id="@+id/tv_15"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:background="@drawable/bg_notifaction"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            >
+            <TextView
+                android:id="@+id/tv_10"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:background="@drawable/bg_notifaction"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            >
+            <TextView
+                android:id="@+id/tv_5"
+                android:layout_width="5dp"
+                android:layout_height="5dp"
+                android:background="@drawable/bg_notifaction"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            >
+            <TextView
+                android:id="@+id/tv_2"
+                android:layout_width="2dp"
+                android:layout_height="2dp"
+                android:background="@drawable/bg_notifaction"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.example.myview.ui.view.GameView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:id="@+id/gameview"
+        />
+
+
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:text="clear"
+        android:textColor="@android:color/background_dark"
+        android:id="@+id/btn_clear"
+
+        />
+
+</LinearLayout>
