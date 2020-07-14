@@ -47,7 +47,9 @@ public class InputNumberView extends RelativeLayout {
     public InputNumberView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         Log.d(TAG, "InputNumberView1: 我是3");
+        //设置属性
         initAttrs(context, attrs);
+        //加载和找布局
         initView(context);
         //设置事件
         setUpEvent();
@@ -55,6 +57,10 @@ public class InputNumberView extends RelativeLayout {
 
     }
 
+    /**
+     * get和set方法
+     * @return
+     */
     public int getmCurrentNumber() {
         return mCurrentNumber;
     }
@@ -144,7 +150,10 @@ public class InputNumberView extends RelativeLayout {
         typedArray.recycle();
     }
 
-
+    /**
+     * 加载布局
+     * @param context
+     */
     private void initView(Context context) {
         //前面的修改都会导致都执行这个方法
         //以下三种代码等价

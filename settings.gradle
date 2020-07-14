@@ -1,3 +1,5 @@
+include ':viewgroup'
 include ':basicknowledge'
 rootProject.name='MyView'
 include ':app'
+include ':graphing'

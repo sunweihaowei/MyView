@@ -30,7 +30,7 @@ public class TestRedButton extends android.view.View implements View.OnClickList
     private int mNumber =10;//默认为10
     private RectF rectF;
     //在xml上的属性
-    private int mBackgroundColor=Color.BLUE;
+    private int mBackgroundColor;
 
     /**
      * 重写3种构造器
@@ -80,7 +80,7 @@ public class TestRedButton extends android.view.View implements View.OnClickList
         //本身就是view，所以本身可以监听
         TestRedButton.this.setOnClickListener(this);
         //加载attrs文件
-        TypedArray typedArray=context.obtainStyledAttributes(attrs, R.styleable.TextAppearance);
+        TypedArray typedArray=context.obtainStyledAttributes(attrs, R.styleable.TestRedButton);//尴尬，这里居然错了
         //获取里面的某一个属性
         mBackgroundColor=typedArray.getColor(R.styleable.TestRedButton_backgroundColor,Color.RED);
     }
@@ -93,7 +93,8 @@ public class TestRedButton extends android.view.View implements View.OnClickList
     protected void onDraw(Canvas canvas) {//画布
         super.onDraw(canvas);
         //颜色画笔
-        mPaint.setColor(Color.RED);
+//        mPaint.setColor(Color.RED);
+        mPaint.setColor(mBackgroundColor);
         mPaint.setTextSize(30);
         //getWidth,getHeight手机屏幕的宽高--x,y,radius,笔
         canvas.drawCircle(getWidth()/2,getHeight()/2,getWidth()/2,mPaint);//画圆，radius：半径

@@ -12,6 +12,8 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/basicknowledge" />
+            <option value="$PROJECT_DIR$/graphing" />
+            <option value="$PROJECT_DIR$/viewgroup" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
