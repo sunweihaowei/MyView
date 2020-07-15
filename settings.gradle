@@ -1,3 +1,4 @@
+include ':viewpath'
 include ':viewgroup'
 include ':basicknowledge'
 rootProject.name='MyView'
