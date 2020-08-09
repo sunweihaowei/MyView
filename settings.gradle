@@ -1,3 +1,4 @@
+include ':canvas'
 include ':viewpath'
 include ':viewgroup'
 include ':basicknowledge'

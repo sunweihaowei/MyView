@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Rect;
+import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -37,7 +38,7 @@ public class MyViewPath extends View {
         super(context, attrs, defStyleAttr);
         //创建paint
         paint = new Paint();
-        paint.setColor(Color.BLACK);
+        paint.setColor(Color.YELLOW);
         paint.setAntiAlias(false);
         paint.setStyle(Paint.Style.STROKE);
         paint.setTextSize(30);
@@ -55,12 +56,14 @@ public class MyViewPath extends View {
         /**
          * 画圆环
          */
+        path.addCircle(getWidth()/2,getHeight()/2,radius,dir);
+        paint.setStrokeWidth(20);
         canvas.drawPath(path,paint);
         /**
          * 写文本
          */
 
-        paint.setColor(Color.RED);
+        /*paint.setColor(Color.RED);
         String text="80";
         //得到文本的边界
         Rect bounds=new Rect();
@@ -69,15 +72,14 @@ public class MyViewPath extends View {
         int textHeight = bounds.height();
         float textX=getWidth()/2-textWidth/2;
         float textY=getHeight()/2+textHeight/2;
-        canvas.drawText(text, textX, textY, paint);
+        canvas.drawText(text, textX, textY, paint);*/
         /**
          * 画弧
          */
-        path.addCircle(getWidth()/2, getHeight()/2, radius, dir);
-        canvas.drawPath(path, paint);
-        float hOffset=0;//字体在圆弧的哪个地方开始画
-        float vOffset=50;//字体往线外还是里
-        canvas.drawTextOnPath("我叫孙伟豪",path,hOffset, vOffset, paint);
+        paint.setColor(Color.RED);
+        RectF oval=new RectF(1,1,1,1);
+        path.addArc(oval,1,2);
+        canvas.drawPath(path,paint);
     }
 
     @Override

@@ -38,11 +38,9 @@ public class MyViewLifeSycle extends ViewGroup {
         for (int i = 0; i < childCount; i++) {
             View childView = getChildAt(i);//得到i个view
             childView.measure(widthMeasureSpec,heightMeasureSpec);//对i个View进行测量
-
         }
         //度量自己的大小
     }
-
     /**
      * 3.确定view的大小
      * @param w
