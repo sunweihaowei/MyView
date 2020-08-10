@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MyViewPath">
+        <attr name="path_background_normal" format="color"></attr>
+        <attr name="path_background_have" format="color"></attr>
+        <attr name="path_text_color" format="color"></attr>
+        <attr name="path_text_size" format="color"></attr>
+        <attr name="path_width" format="color"></attr>
+    </declare-styleable>
+</resources>
